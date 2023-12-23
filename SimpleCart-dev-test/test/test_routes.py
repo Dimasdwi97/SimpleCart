@@ -15,3 +15,4 @@ def test_product_api(client):
     response = client.get("/api/products")
     assert response.status_code == 200
 
+
