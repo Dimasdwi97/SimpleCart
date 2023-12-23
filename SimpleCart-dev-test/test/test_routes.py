@@ -15,4 +15,19 @@ def test_product_api(client):
     response = client.get("/api/products")
     assert response.status_code == 200
 
+# post new cart
+def test_post_cart(client):
+    data=   {
+            "coupon_code": "string",
+            "shipping_fee": 0,
+            "cart_items": [
+                {
+                    "product_id": 0,
+                    "qty": 0
+                }
+              ]
+            }
+    response = client.get(f"/api/cart", json=data)
+    assert response.status_code == 200
+
 
